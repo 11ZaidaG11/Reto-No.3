@@ -1,4 +1,5 @@
 # Reto-No.3
+Numeros primos hasta x numero dado.
 ## Pseudocodigo
 Inicio  
 PASO 1. Ingresar un numero x cualquiera  
@@ -15,32 +16,19 @@ Fin
 ## Diagrma de flujo
 ```mermaid
 flowchart TD
-    A(Inicio) --> B[Ingresar un número x]
+    A(Inicio) --> B[/Ingresar un número x/]
     B --> C[Repetir para cada número desde 2 hasta x]
     C --> D[Comenzar la cuenta de divisores en 0]
     D --> E[Repetir para cada num_div desde 1 hasta el número]
-    E --> F{num_div es divisor del número?} --> |Si| G[Sumar 1 a la cuenta de divisores]:::decision1
+    E --> F{¿num_div es divisor del número?} --> |Si| G[Sumar 1 a la cuenta de divisores]:::decision1
     F --> |No| H[No sumar, continuar]:::decision2
     G --> E
     H --> E
-    E --> |Terminar iteración de divisores| I{El número tiene solamente 2 divisores?}
+    E --> |Terminar iteración de divisores| I{¿El número tiene solamente 2 divisores?}
     I --> J[El número es primo]
     I --> K[El número no es primo]
     J --> L[Continuar con el siguiente número]
-    K --> L{Último número procesado?}
-    L --> |Si| N[Fin]
+    K --> L{¿Último número procesado?}
+    L --> |Si| N(Fin)
     L --> |No| C
-```
-
-```
-x = int(input("Ingrese x: "))
-for numero in range(2, x+1):
-  divisores = 0
-  for i in range(1, numero+1):
-    if numero%i == 0:
-      divisores += 1
-  if divisores == 2:
-    print(numero, "primo")
-  else:
-    print(numero, "no primo")
 ```
